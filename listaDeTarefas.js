@@ -31,3 +31,10 @@ newItem.addEventListener('click', createTask);
   
     return buttonConcludes;
   }
+
+  const concludesTask = (e) => {
+    const buttonConcludes = e.target;
+    const taskCompleted = buttonConcludes.parentElement;
+  
+    taskCompleted.classList.toggle('done');
+  }
