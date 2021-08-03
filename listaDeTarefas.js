@@ -1,4 +1,4 @@
-(()=>{ // IIFE Immediately Invoked Function Expression ou “Função de Invocação Imediata”. Para não ter acesso a regras de negócio
+(()=>{ // IIFE Immediately Invoked Function Expression ou “Função de Invocação Imediata”. Para não ter acesso a regras de negócio (escopo)
 
   const newItem = document.querySelector('[data-form-button]');
   
@@ -15,6 +15,7 @@
   
     li.innerHTML = content;
     li.appendChild(ButtonConcludes());
+    li.appendChild(ButtonDelete());
     li.classList.add('task');
     list.appendChild(li);
   
@@ -39,6 +40,15 @@
     const taskCompleted = buttonConcludes.parentElement;
   
     taskCompleted.classList.toggle('done');
+  }
+
+  const ButtonDelete = () => {
+    const buttonDelete = document.createElement('button');
+    buttonDelete.innerText = 'Deletar!';
+
+    buttonDelete.addEventListener('click', () => {});
+
+    return buttonDelete;
   }
 
 })(); // ativa a função IIFE
